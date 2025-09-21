@@ -55,7 +55,7 @@ export default function Home() {
         PYTRADER.IO
       </div>
 
-      <div className="mt-10 mb-16 grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+      <div className="mt-10 mb-16 grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto px-4 sm:px-6">
         {/* Card A */}
         <div className="card ring-1 ring-terminal/60">
           <Image src="/background_1.png" alt="" fill className="card-img" />
