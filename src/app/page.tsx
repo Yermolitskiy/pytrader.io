@@ -1,18 +1,22 @@
 import Image from "next/image";
+import ScrollIndicator from "./ScrollIndicator";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden">
+      <ScrollIndicator />
       {/* background */}
-      <Image
-        src="/bg-lab.png"
-        alt=""
-        fill
-        className="object-cover opacity-80"
-        priority
-      />
-      {/* dark overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="fixed inset-0"> 
+        <Image
+          src="/bg-lab.png"
+          alt=""
+          fill
+          className="object-cover opacity-80"
+          priority
+        />
+        {/* dark overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
       {/* center content */}
       <section className="relative z-10 flex min-h-screen items-center justify-center">
         <div className="mx-4 max-w-3xl text-center text-white">
