@@ -24,26 +24,26 @@ export default function Home() {
             className="mx-auto mb-6 opacity-95"
             priority
           />
-          <h1 className="text-3xl sm:text-5xl font-semibold">PyTrader.io</h1>
-          <p className="mt-3 text-lg sm:text-xl opacity-90">
+          <h1 className="text-3xl sm:text-5xl text-terminal font-semibold">PyTrader.io</h1>
+          <p className="mt-3 text-lg sm:text-xl opacity-90 text-terminal">
             Build, test & automate trading bots in Python.
             Open-source. For traders, developers, and writers.
           </p>
           <div className="mt-6 flex gap-3 justify-center">
             <a
               href="https://github.com/Yermolitskiy/pytrader.io/"
-              className="rounded-2xl px-5 py-3 bg-white text-black font-medium"
+              className="rounded-2xl px-5 py-3 bg-terminal text-black font-medium"
             >
               View on GitHub
             </a>
             <a
               href="#subscribe"
-              className="rounded-2xl px-5 py-3 border border-white/70"
+              className="text-terminal rounded-2xl px-5 py-3 border border-terminal/70"
             >
               Get updates
             </a>
           </div>
-          <p className="mt-8 text-sm opacity-70">
+          <p className="mt-8 text-sm text-terminal opacity-70">
             © {new Date().getFullYear()} PyTrader.io — GNU GENERAL PUBLIC LICENSE
             Version 3 Licensed
           </p>
@@ -51,9 +51,53 @@ export default function Home() {
       </section>
 
       {/* faint watermark */}
-      <div className="pointer-events-none absolute bottom-6 right-6 text-white/20 text-xs tracking-widest">
+      <div className="pointer-events-none absolute bottom-6 right-6 text-xs tracking-widest text-terminal">
         PYTRADER.IO
       </div>
+
+      <div className="mt-10 mb-16 grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+        {/* Card A */}
+        <div className="card ring-1 ring-terminal/60">
+          <Image src="/background_1.png" alt="" fill className="card-img" />
+          <div className="card-overlay" />
+          <div className="card-body">
+            <h3 className="text-xl font-semibold text-terminal">Python Trading Masterclass</h3>
+            <p className="mt-2 text-sm/relaxed text-terminal/85">
+              Live workshop + recording + starter bot template. 14-day "no value → refund".
+            </p>
+            <div className="mt-4 flex gap-3">
+              <a href="https://buy.stripe.com/YOUR_LINK_A" className="rounded-xl px-4 py-2 bg-terminal text-black">
+                Enroll (€99)
+              </a>
+              <a href="#syllabus" className="rounded-xl px-4 py-2 border border-terminal/30 text-terminal">
+                Syllabus
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Card B */}
+        <div className="card ring-1 ring-terminal/60">
+          <Image src="/background_2.png" alt="" fill className="card-img" />
+          <div className="card-overlay" />
+          <div className="card-body">
+            <h3 className="text-xl font-semibold text-terminal">VIP 1:1 Setup / Coaching</h3>
+            <p className="mt-2 text-sm/relaxed text-terminal/85">
+              Personal help connecting IBKR/crypto APIs, debugging, and launching your bot.
+            </p>
+            <div className="mt-4 flex gap-3">
+              <a href="https://buy.stripe.com/YOUR_LINK_B" className="rounded-xl px-4 py-2 font-medium bg-terminal text-black">
+                Book (€200)
+              </a>
+              <a href="mailto:hello@pytrader.io?subject=VIP%201:1%20question" className="rounded-xl px-4 py-2 border border-terminal/30 text-terminal">
+                Ask first
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </main>
   );
 }
