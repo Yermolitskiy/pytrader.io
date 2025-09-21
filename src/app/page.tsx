@@ -63,7 +63,7 @@ export default function Home() {
           <div className="card-body">
             <h3 className="text-xl font-semibold text-terminal">Python Trading Masterclass</h3>
             <p className="mt-2 text-sm/relaxed text-terminal/85">
-              Live workshop + recording + starter bot template. 14-day "no value → refund".
+            Live workshop + recording + starter bot template. 14-day &quot;no value → refund&quot;.
             </p>
             <div className="mt-4 flex gap-3">
               <a href="https://buy.stripe.com/YOUR_LINK_A" className="rounded-xl px-4 py-2 bg-terminal text-black">
