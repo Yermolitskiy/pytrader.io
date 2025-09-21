@@ -20,7 +20,7 @@ export default function ScrollIndicator() {
   const top = `calc(${(progress * 100).toFixed(2)}% - ${thumbH / 2}px)`;
 
   return (
-    <div aria-hidden className="fixed left-3 top-1/2 -translate-y-1/2 z-50 h-[60vh] w-10 pointer-events-none">
+    <div aria-hidden className="hidden sm:block fixed left-3 top-1/2 -translate-y-1/2 z-50 h-[60vh] w-10 pointer-events-none">
       {/* label */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full -rotate-90 origin-left text-[10px] uppercase tracking-[0.25em] text-terminal/80 opacity-80">
         Page Scroll
