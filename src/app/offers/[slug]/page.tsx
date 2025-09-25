@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { offers } from "@/data/offers";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   return offers.map(o => ({ slug: o.slug }));
@@ -38,7 +39,7 @@ export default async function OfferPage({ params }: { params: { slug: string } }
             <MDXRemote source={source} />
           </article>
           <div className="mt-8">
-            <a href="/" className="rounded-2xl px-5 py-3 border border-terminal/70 text-terminal">← Back</a>
+            <Link href="/" className="rounded-2xl px-5 py-3 border border-terminal/70 text-terminal">← Back</Link>
           </div>
         </div>
       </section>
