@@ -106,7 +106,7 @@ export default function Home() {
               <a href={`${offerBySlug["vip-setup"].buyUrl}`} className="rounded-xl px-4 py-2 font-medium bg-terminal text-black">
                 Book (€200)
               </a>
-              <a href="mailto:hello@pytrader.io?subject=VIP%201:1%20question" className="rounded-xl px-4 py-2 border border-terminal/30 text-terminal">
+              <a href="mailto:cooperation@contacts.marenno.com?subject=VIP%201:1%20question" className="rounded-xl px-4 py-2 border border-terminal/30 text-terminal">
                 Ask first
               </a>
             </div>
