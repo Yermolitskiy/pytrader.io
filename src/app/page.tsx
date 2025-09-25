@@ -1,9 +1,14 @@
 import Image from "next/image";
 import ScrollIndicator from "./ScrollIndicator";
-
+import PreserveScroll from "./PreserveScroll";
+import { offers } from "../data/offers";
 export default function Home() {
+  // Build a quick lookup by slug so we can reference offers by key
+  const offerBySlug = Object.fromEntries(offers.map(o => [o.slug, o] as const));
+
   return (
     <main className="relative min-h-screen overflow-hidden">
+      <PreserveScroll />
       <ScrollIndicator />
       {/* background */}
       <div className="fixed inset-0"> 
@@ -65,15 +70,19 @@ export default function Home() {
           <Image src="/background_1.png" alt="" fill className="card-img" />
           <div className="card-overlay" />
           <div className="card-body">
-            <h3 className="text-xl font-semibold text-terminal">Python Trading Masterclass</h3>
+            <h3 className="text-xl font-semibold">
+              <a href={`/offers/${offerBySlug["masterclass"].slug}`} className="text-terminal hover:underline" data-preserve-scroll="home">
+                Python Trading Masterclass
+              </a>
+            </h3>
             <p className="mt-2 text-sm/relaxed text-terminal/85">
             Live workshop + recording + starter bot template. 14-day &quot;no value → refund&quot;.
             </p>
             <div className="mt-4 flex gap-3">
-              <a href="https://buy.stripe.com/YOUR_LINK_A" className="rounded-xl px-4 py-2 bg-terminal text-black">
+              <a href={`${offerBySlug["masterclass"].buyUrl}`} className="rounded-xl px-4 py-2 bg-terminal text-black">
                 Enroll (€99)
               </a>
-              <a href="#syllabus" className="rounded-xl px-4 py-2 border border-terminal/30 text-terminal">
+              <a href={`/offers/${offerBySlug["masterclass"].slug}`} className="rounded-xl px-4 py-2 border border-terminal/30 text-terminal" data-preserve-scroll="home">
                 Syllabus
               </a>
             </div>
@@ -85,12 +94,16 @@ export default function Home() {
           <Image src="/background_2.png" alt="" fill className="card-img" />
           <div className="card-overlay" />
           <div className="card-body">
-            <h3 className="text-xl font-semibold text-terminal">VIP 1:1 Setup / Coaching</h3>
+            <h3 className="text-xl font-semibold">
+              <a href={`/offers/${offerBySlug["vip-setup"].slug}`} className="text-terminal hover:underline" data-preserve-scroll="home">
+                VIP 1:1 Setup / Coaching
+              </a>
+            </h3>
             <p className="mt-2 text-sm/relaxed text-terminal/85">
               Personal help connecting IBKR/crypto APIs, debugging, and launching your bot.
             </p>
             <div className="mt-4 flex gap-3">
-              <a href="https://buy.stripe.com/YOUR_LINK_B" className="rounded-xl px-4 py-2 font-medium bg-terminal text-black">
+              <a href={`${offerBySlug["vip-setup"].buyUrl}`} className="rounded-xl px-4 py-2 font-medium bg-terminal text-black">
                 Book (€200)
               </a>
               <a href="mailto:hello@pytrader.io?subject=VIP%201:1%20question" className="rounded-xl px-4 py-2 border border-terminal/30 text-terminal">
